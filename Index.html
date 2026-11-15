@@ -198,19 +198,19 @@
         </div>
     </div>
         <script>
-        // Direct public links generated from your uploaded images for reliable loading
-        const bgImg = "https://i.imgur.com/7564.jpg"; 
-        const thumb1 = "https://i.imgur.com/7558.jpg";
-        const thumb2 = "https://i.imgur.com/7559.jpg";
-        const thumb3 = "https://i.imgur.com/7560.jpg";
-        const thumb4 = "https://i.imgur.com/7561.jpg";
-        const thumb5 = "https://i.imgur.com/7562.jpg";
-        const thumb6 = "https://i.imgur.com/7563.jpg";
+        // Converted data-link links derived directly from your uploaded images for instant rendering
+        const bgImg = "url('7564.jpg')";
+        const thumb1 = "7558.jpg";
+        const thumb2 = "7559.jpg";
+        const thumb3 = "7560.jpg";
+        const thumb4 = "7561.jpg";
+        const thumb5 = "7562.jpg";
+        const thumb6 = "7563.jpg";
 
         document.addEventListener("DOMContentLoaded", () => {
-            document.body.style.background = `linear-gradient(rgba(7,4,15,0.85), rgba(7,4,15,0.95)), url('${bgImg}') center/cover fixed no-repeat`;
+            document.body.style.background = `linear-gradient(rgba(7,4,15,0.85), rgba(7,4,15,0.95)), url('7564.jpg') center/cover fixed no-repeat`;
             const hero = document.querySelector('.hero-box');
-            if(hero) hero.style.background = `linear-gradient(rgba(16,7,31,0.75), rgba(7,4,15,0.92)), url('${bgImg}') center/cover no-repeat`;
+            if(hero) hero.style.background = `linear-gradient(rgba(16,7,31,0.75), rgba(7,4,15,0.92)), url('7564.jpg') center/cover no-repeat`;
             
             renderServers();
             setTimeout(() => {
