@@ -14,7 +14,6 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
         body { 
-            background: linear-gradient(rgba(7,4,15,0.85), rgba(7,4,15,0.95)), url('input_file_0.png') center/cover fixed no-repeat;
             color: #f3eaf8; font-family: "Inter", system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; min-height: 100vh; 
         }
         a { color: inherit; text-decoration: none; }
@@ -41,7 +40,6 @@
 
         .hero-box {
             margin-top: 24px;
-            background: linear-gradient(rgba(16,7,31,0.75), rgba(7,4,15,0.92)), url('input_file_0.png') center/cover no-repeat;
             border: 1px solid rgba(236,72,153,0.3);
             border-radius: 14px;
             padding: 36px 24px;
@@ -200,6 +198,26 @@
         </div>
     </div>
         <script>
+        const bgImg = "{bg}";
+        const thumb1 = "{i1}";
+        const thumb2 = "{i2}";
+        const thumb3 = "{i3}";
+        const thumb4 = "{i4}";
+        const thumb5 = "{i5}";
+        const thumb6 = "{i6}";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.style.background = `linear-gradient(rgba(7,4,15,0.85), rgba(7,4,15,0.95)), url('${bgImg}') center/cover fixed no-repeat`;
+            const hero = document.querySelector('.hero-box');
+            if(hero) hero.style.background = `linear-gradient(rgba(16,7,31,0.75), rgba(7,4,15,0.92)), url('${bgImg}') center/cover no-repeat`;
+            
+            renderServers();
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('fade-out');
+                document.getElementById('app-content').classList.add('visible');
+            }, 500);
+        });
+
         const appConfig = {
             ownerProfileUrl: "https://www.roblox.com.am/users/123456789/profile",
             ownerFakeUrl: "https://roblox.com/users/123456789/profile",
@@ -210,7 +228,7 @@
                     name: "AI Town Hangout [CONGESTED]",
                     desc: "Public Roblox experience instance. Currently maxed out player count with high latency.",
                     currentPlayers: 20, maxPlayers: 20, ping: "340ms", rating: "45% 👍", statusTag: "FULL", isBad: true,
-                    thumb: "input_file_1.png",
+                    thumb: thumb1,
                     PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/71007326530715/AI-Town?privateServerLinkCode=83872921682350434392286111406032",
                     FAKE_URL_DISPLAY: "https://roblox.com/games/71007326530715/AI-Town"
                 }
@@ -221,7 +239,7 @@
                     name: "AI Town (Private Server)",
                     desc: "Custom Roblox interactive social map featuring model animations and customized private room scripts.",
                     currentPlayers: 18, maxPlayers: 20, ping: "14ms", rating: "98% 👍", statusTag: "VIP ACTIVE", isBad: false,
-                    thumb: "input_file_1.png",
+                    thumb: thumb1,
                     PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/71007326530715/AI-Town?privateServerLinkCode=83872921682350434392286111406032",
                     FAKE_URL_DISPLAY: "https://roblox.com/games/71007326530715/AI-Town"
                 },
@@ -230,7 +248,7 @@
                     name: "Walk 10,000 Stairs (VIP Hangout)",
                     desc: "Featured Roblox adventure map converted into a relaxed high-rise social hangout hub.",
                     currentPlayers: 14, maxPlayers: 20, ping: "22ms", rating: "92% 👍", statusTag: "VIP ACTIVE", isBad: false,
-                    thumb: "input_file_2.png",
+                    thumb: thumb2,
                     PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/82205993156224/Walk-10000-Stairs-for-Neko-Girl?privateServerLinkCode=360470997816881377827886421535",
                     FAKE_URL_DISPLAY: "https://roblox.com/games/82205993156224/Stairs-Hangout"
                 },
@@ -239,7 +257,7 @@
                     name: "Talk to AI Mimi (Private Suite)",
                     desc: "Interactive Roblox roleplay experience configured with private server permissions and custom UI.",
                     currentPlayers: 19, maxPlayers: 20, ping: "18ms", rating: "95% 👍", statusTag: "VIP ACTIVE", isBad: false,
-                    thumb: "input_file_3.png",
+                    thumb: thumb3,
                     PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/135402310967020/Talk-to-AI-Mimi?privateServerLinkCode=360470997816881377827886421535",
                     FAKE_URL_DISPLAY: "https://roblox.com/games/135402310967020/AI-Mimi"
                 },
@@ -248,7 +266,7 @@
                     name: "Meet a Neko (Social Hub)",
                     desc: "Popular Roblox anime-themed hangout realm with custom model props and furniture assets.",
                     currentPlayers: 12, maxPlayers: 20, ping: "26ms", rating: "90% 👍", statusTag: "VIP ACTIVE", isBad: false,
-                    thumb: "input_file_4.png",
+                    thumb: thumb4,
                     PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/14153443454/Meet-a-neko?privateServerLinkCode=360470997816881377827886421535",
                     FAKE_URL_DISPLAY: "https://roblox.com/games/14153443454/Meet-a-Neko"
                 },
@@ -257,7 +275,7 @@
                     name: "Headpats From Catgirls 3",
                     desc: "Custom Roblox showcase hangout map with optimized shaders and smooth client frame rates.",
                     currentPlayers: 15, maxPlayers: 20, ping: "11ms", rating: "97% 👍", statusTag: "VIP ACTIVE", isBad: false,
-                    thumb: "input_file_5.png",
+                    thumb: thumb5,
                     PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/99683982727100/Headpats-From-Catgirls-3?privateServerLinkCode=360470997816881377827886421535",
                     FAKE_URL_DISPLAY: "https://roblox.com/games/99683982727100/Catgirls-3"
                 },
@@ -266,20 +284,12 @@
                     name: "The Condo Luxury Suite",
                     desc: "High-end private social rooms with integrated radio models and seating scripts.",
                     currentPlayers: 17, maxPlayers: 20, ping: "15ms", rating: "96% 👍", statusTag: "VIP ACTIVE", isBad: false,
-                    thumb: "input_file_6.png",
+                    thumb: thumb6,
                     PRIVATE_SERVER_URL: "https://www.roblox.com.am/games/95051309591921/Talk-to-AI-Yumiko?privateServerLinkCode=360470997816881377827886421535",
                     FAKE_URL_DISPLAY: "https://roblox.com/games/33215442/Condo-Suite"
                 }
             ]
         };
-
-        document.addEventListener("DOMContentLoaded", () => {
-            renderServers();
-            setTimeout(() => {
-                document.getElementById('loading-screen').classList.add('fade-out');
-                document.getElementById('app-content').classList.add('visible');
-            }, 500);
-        });
 
         function renderServers() {
             const container = document.getElementById('serverGridContainer');
